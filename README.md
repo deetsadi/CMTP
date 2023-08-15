@@ -14,6 +14,6 @@ Further, the contrastive loss is shown more in depth:
 
 ## Usage
 ### Dataset
-Download the MusicCaps dataset, including both the raw audio files and csv containing metadata. Use the script located [here]((https://github.com/nateraw/download-musiccaps-dataset)) to do so.
+Download the MusicCaps dataset, including both the raw audio files and csv containing metadata. Use the script located [here](https://github.com/nateraw/download-musiccaps-dataset) to do so.
 ### Train
 Call `train.py` with your desired hyperparameters.
