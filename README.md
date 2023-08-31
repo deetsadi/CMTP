@@ -7,10 +7,10 @@ Similarily, the prompt `female singer over keyboard and soft drums` was used and
 
 Inspired by CLIP from OpenAI, CMTP was trained using (music, text) pairs from the [MusicCaps](https://research.google/resources/datasets/musiccaps/) dataset.  
 A detailed look at the model architecture is shown below:  
-![Training drawio-2](https://github.com/deetsadi/CMTP/assets/47929718/951c59dd-a6a1-426b-bee0-0425b8eea011)
+![Training drawio-2](graphics/Training.drawio-2.png)
 
 Further, the contrastive loss is shown more in depth:
-![Loss drawio-2](https://github.com/deetsadi/CMTP/assets/47929718/bb95fb60-842b-47a1-a338-2db40cc15cdd)
+![Loss drawio-2](graphics/Loss.drawio-2.png)
 
 ## Usage
 ### Dataset
