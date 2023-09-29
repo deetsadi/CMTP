@@ -34,13 +34,13 @@ class AudioTextModel(nn.Module):
         return self.contrastive_loss(mel_spec_embeddings, text_embeddings)
     
     def contrastive_loss(self, mel_spec_embeddings, text_embeddings):
-        logits = (text_embeddings @ mel_spec_embeddings.T) / self.temperature
+        logits = (text_embeddings @ mel_spec_embeddings.T) / self.temperature # ideally would be the identity matrix, as text and mel embeddings matrices should be the same
         mel_spec_similarity = mel_spec_embeddings @ mel_spec_embeddings.T
         texts_similarity = text_embeddings @ text_embeddings.T
         targets = F.softmax(
-            (mel_spec_similarity + texts_similarity) / 2 * self.temperature, dim=-1
+            (mel_spec_similarity + texts_similarity) / 2 * self.temperature, dim=-1 # identity matrix with shape (batch, batch)
         )
-        texts_loss = self.cross_entropy(targets, logits)
+        texts_loss = self.cross_entropy(targets, logits) 
         mel_spec_loss = self.cross_entropy(targets.T, logits.T)
         loss =  (mel_spec_loss + texts_loss)
         return loss.mean()
